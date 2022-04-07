@@ -15,8 +15,6 @@ void PhoneBook::addContact(Contact contact)
 {
 	this->contacts[index % MAX_PHONEBOOK_SIZE] = contact;
 	this->index++;
-	// if (this->index == 9)
-	// 	this->index--;
 }
 
 Contact PhoneBook::getContact(int index)
@@ -43,12 +41,27 @@ void	PhoneBook::printContacts(void)
 		contact = this->getContact(i);
 		value = contact.getFirstName();
 		cout << std::setw(10);
+		if (value.size() > 10)
+		{
+			value.resize(10);
+			value[9] = '.';
+		}
 		cout << value << "|";
 		value = contact.getLastName();
 		cout << std::setw(10);
+		if (value.size() > 10)
+		{
+			value.resize(10);
+			value[9] = '.';
+		}
 		cout << value << "|";
 		value = contact.getNickname();
 		cout << std::setw(10);
+		if (value.size() > 10)
+		{
+			value.resize(10);
+			value[9] = '.';
+		}
 		cout << value << "|";
 		cout << endl;
 	}
