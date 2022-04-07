@@ -27,7 +27,7 @@ void Contact::setLastName(string lastName)
 
 string Contact::getLastName(void)
 {
-	return this->firstName;
+	return this->lastName;
 }
 
 void Contact::setNickname(string nickname)
